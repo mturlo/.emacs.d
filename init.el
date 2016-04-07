@@ -16,7 +16,7 @@
  c-basic-offset 4)
 
 ;; modes
-(electric-indent-mode 1)
+(electric-indent-mode 0)
 (delete-selection-mode 1)
 
 ;; the package manager
