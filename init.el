@@ -78,6 +78,20 @@
 
 ; keys
 (define-key global-map (kbd "RET") 'newline-and-indent)
+(define-key input-decode-map "\e[1;2D" [S-left])
+(define-key input-decode-map "\e[1;2C" [S-right])
+(define-key input-decode-map "\e[1;2B" [S-down])
+(define-key input-decode-map "\e[1;2A" [S-up])
+(define-key input-decode-map "\e[1;2F" [S-end])
+(define-key input-decode-map "\e[1;2H" [S-home])
+
+(global-set-key (kbd "s-<up>") 'scroll-down-command)
+(global-set-key (kbd "s-<down>") 'scroll-up-command)
+(global-set-key (kbd "s-<left>") 'beginning-of-line)
+(global-set-key (kbd "s-<right>") 'end-of-line)
+
+(global-set-key (kbd "s-w") 'mac-key-close-window)
+(global-set-key (kbd "s-g") 'goto-line)
 
 ; fun
 (defun test-only ()
