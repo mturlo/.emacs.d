@@ -124,3 +124,7 @@
   :bind
   (("s-f" . projectile-find-file)
    ("s-F" . projectile-grep)))
+
+; initial window size
+(when window-system (set-frame-size (selected-frame) 180 124))
+
