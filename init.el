@@ -104,6 +104,9 @@
 (global-set-key (kbd "s-w") 'mac-key-close-window)
 (global-set-key (kbd "s-g") 'goto-line)
 
+(global-set-key (kbd "M-]") 'next-buffer)
+(global-set-key (kbd "M-[") 'previous-buffer)
+
 ; fun
 (defun test-only ()
   "Run test with current file."
