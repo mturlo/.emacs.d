@@ -1,3 +1,10 @@
+;; general settings & utils
+(tool-bar-mode 0) 
+(menu-bar-mode 0)
+(toggle-frame-fullscreen) 
+(scroll-bar-mode 0)
+(fset `yes-or-no-p `y-or-n-p)
+
 ;; global variables
 (setq
  inhibit-startup-screen t
