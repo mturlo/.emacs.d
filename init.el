@@ -5,6 +5,13 @@
 (scroll-bar-mode 0)
 (fset `yes-or-no-p `y-or-n-p)
 
+;; 
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade.ferrier.me.uk/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(package-initialize)
+
 ;; global variables
 (setq
  inhibit-startup-screen t
@@ -27,18 +34,15 @@
 (delete-selection-mode 1)
 
 ;; the package manager
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade.ferrier.me.uk/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(package-initialize)
 
-; list the packages you want
 (setq package-list
 		'(use-package magit ensime scala-mode2 play-routes-mode yaml-mode helm spaceline idea-darkula-theme
 			projectile))
-
-; list the repositories containing them
-(setq
- use-package-always-ensure t
- package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                    ("org" . "http://orgmode.org/elpa/")
-                    ("melpa" . "http://melpa.org/packages/")))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
