@@ -1,16 +1,9 @@
 ;; general settings & utils
 (tool-bar-mode 0) 
 (menu-bar-mode 0)
-(toggle-frame-fullscreen) 
+; (toggle-frame-fullscreen) 
 (scroll-bar-mode 0)
 (fset `yes-or-no-p `y-or-n-p)
-
-;; 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade.ferrier.me.uk/packages/"))
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-(package-initialize)
 
 ;; global variables
 (setq
@@ -41,8 +34,8 @@
 (package-initialize)
 
 (setq package-list
-		'(use-package magit ensime scala-mode2 play-routes-mode yaml-mode helm spaceline idea-darkula-theme
-			projectile))
+		'(use-package magit ensime scala-mode2 play-routes-mode yaml-mode helm spaceline spacegray-theme
+      undo-tree projectile))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -81,7 +74,7 @@
 (setq helm-mode-fuzzy-match t)
 (helm-autoresize-mode 1)
 
-(load-theme 'idea-darkula t)
+(load-theme 'spacegray t)
 
 (require 'spaceline-config)
 (spaceline-emacs-theme)
@@ -106,6 +99,14 @@
 
 (global-set-key (kbd "M-]") 'next-buffer)
 (global-set-key (kbd "M-[") 'previous-buffer)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+;; tree-undo
+
+(global-undo-tree-mode)
+(global-set-key (kbd "s-Z") 'undo-tree-redo)
+(global-set-key (kbd "s-z") 'undo-tree-undo)
+
 
 ; fun
 (defun test-only ()
@@ -142,3 +143,17 @@
 ; initial window size
 (when window-system (set-frame-size (selected-frame) 180 124))
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("613a7c50dbea57860eae686d580f83867582ffdadd63f0f3ebe6a85455ab7706" "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
